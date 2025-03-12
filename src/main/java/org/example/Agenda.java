@@ -8,7 +8,7 @@ import java.util.List;
  * Una clase que representa una Agenda con un atributo list que hace referencia a un objeto de tipo Contacto.
  * Permite añadir, borrar y modificar contactos.
  */
-public class Agenda {
+public class Agenda implements IAgenda {
     private List<Persona> contacts; // Lista de Contacto
 
     /**
@@ -24,6 +24,7 @@ public class Agenda {
      * @param name el nombre del contacto.
      * @param phone el número de teléfono a agregar.
      */
+    @Override
     public void addContact(String name, String phone) {
         boolean exists = false;
         for (Persona c : contacts) {
@@ -45,6 +46,7 @@ public class Agenda {
      * mayúsculas).
      * @param name el nombre del contacto a eliminar.
      */
+    @Override
     public void removeContact(String name) {
         Iterator<Persona> it = contacts.iterator();
 
@@ -66,6 +68,7 @@ public class Agenda {
      * @param oldPhone el número de teléfono que queremos remplazar.
      * @param newPhone el nuevo número de teléfono.
      */
+    @Override
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
         for (Persona c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
@@ -85,6 +88,7 @@ public class Agenda {
      *
      * @return una lista de objetos {@link Persona}.
      */
+    @Override
     public List<Persona> getContacts() {
         return this.contacts;
     }
