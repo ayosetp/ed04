@@ -9,6 +9,9 @@ import java.util.List;
  * Permite añadir, borrar y modificar contactos.
  */
 public class Agenda implements IAgenda {
+    /**
+     * Lista de contactos almacenados en la agenda.
+     */
     private List<Persona> contacts; // Lista de Contacto
 
     /**

@@ -7,7 +7,13 @@ import java.util.List;
  * Representa un contacto que tiene los atributos de nombre y número de teléfono.
  */
 class Persona {
+    /**
+     * Atributo que representa el nombre del contacto
+     */
     private String name;
+    /**
+     * Atributo que representa el numero de teléfono del contacto
+     */
     private List<String> phones;
 
 
@@ -41,11 +47,17 @@ class Persona {
     public List<String> getPhones() {
         return this.phones;
     }
-
+    /**
+     * Establece un nuevo nombre para el contacto.
+     * @param name el nuevo nombre del contacto.
+     */
     public void setName(String name) {
         this.name = name;
     }
-
+    /**
+     * Establece una nueva lista de números de teléfono para el contacto.
+     * @param phones la lista de números de teléfono.
+     */
     public void setPhones(List<String> phones) {
         this.phones = phones;
     }
