@@ -9,7 +9,7 @@ import java.util.List;
  * Permite añadir, borrar y modificar contactos.
  */
 public class Agenda {
-    private List<Contacto> contacts; // Lista de Contacto
+    private List<Persona> contacts; // Lista de Contacto
 
     /**
      * Crea una nueva instancia de Agenda e inicializa la lista de contactos.
@@ -26,7 +26,7 @@ public class Agenda {
      */
     public void addContact(String name, String phone) {
         boolean exists = false;
-        for (Contacto c : contacts) {
+        for (Persona c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
                 exists = true;
                 c.getPhones().add(phone);
@@ -35,7 +35,7 @@ public class Agenda {
         }
 
         if (!exists) {
-            Contacto newContact = new Contacto(name, phone);
+            Persona newContact = new Persona(name, phone);
             contacts.add(newContact);
         }
     }
@@ -46,10 +46,10 @@ public class Agenda {
      * @param name el nombre del contacto a eliminar.
      */
     public void removeContact(String name) {
-        Iterator<Contacto> it = contacts.iterator();
+        Iterator<Persona> it = contacts.iterator();
 
         while (it.hasNext()) {
-            Contacto c = it.next();
+            Persona c = it.next();
 
             if (c.getName().equalsIgnoreCase(name)) {
                 it.remove();
@@ -67,7 +67,7 @@ public class Agenda {
      * @param newPhone el nuevo número de teléfono.
      */
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
-        for (Contacto c : contacts) {
+        for (Persona c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
                 List<String> phones = c.getPhones();
 
@@ -83,9 +83,9 @@ public class Agenda {
     /**
      * Devuelve la lista de contactos registrados en la agenda.
      *
-     * @return una lista de objetos {@link Contacto}.
+     * @return una lista de objetos {@link Persona}.
      */
-    public List<Contacto> getContacts() {
+    public List<Persona> getContacts() {
         return this.contacts;
     }
 }
